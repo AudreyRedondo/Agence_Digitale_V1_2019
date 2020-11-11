@@ -1,0 +1,47 @@
+.title, .details, span {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.details {
+  flex-direction: column;
+}
+
+.details span i {
+  width: 15px;
+  text-align: center;
+}
+
+.text-muted, .text-muted i {
+  color: #ababab!important;
+}
+
+.title {
+  justify-content: space-between;
+}
+
+.first-subtitle, .second-subtitle {
+  font-size: 1.1rem;
+}
+
+span {
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: baseline;
+}
+
+li.timeline-li.animated .step-content {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+.hide-on-init {
+  opacity: 0;
+}
+
+.border-btm {
+  border-bottom: 1px solid transparent;
+}
+hr {
+  border-top: 5px solid rgba(0,0,0,.1);
+}

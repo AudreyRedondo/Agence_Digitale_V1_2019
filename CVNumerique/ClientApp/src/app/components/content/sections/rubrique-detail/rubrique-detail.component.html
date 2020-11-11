@@ -1,0 +1,17 @@
+<div class="rubrique-container float-left" *ngFor="let rubrique of rubriques">
+  <div *ngIf="serviceID === undefined && rubrique.fragment !== 'profil'|| serviceID !== undefined && rubrique.fragment !== 'service' && rubrique.fragment !== 'contact'" class="rubrique" [id]="rubrique.fragment">
+    <app-rubrique-detail-header [rubrique]="rubrique"></app-rubrique-detail-header>
+    <app-rubrique-detail-profil *ngIf="rubrique.title === 'Profil'"></app-rubrique-detail-profil>
+    <app-rubrique-detail-services *ngIf="rubrique.title === 'Services'"></app-rubrique-detail-services>
+    <app-rubrique-detail-experience *ngIf="rubrique.title === 'Expériences professionnelles'"></app-rubrique-detail-experience>
+    <app-rubrique-detail-competences *ngIf="rubrique.title === 'Compétences'"></app-rubrique-detail-competences>
+    <app-rubrique-detail-formation *ngIf="rubrique.title === 'Formation'"></app-rubrique-detail-formation>
+    <app-rubrique-detail-realisations *ngIf="rubrique.title === 'Réalisations'"></app-rubrique-detail-realisations>
+    <app-rubrique-detail-temoignages *ngIf="rubrique.title === 'Témoignages'"></app-rubrique-detail-temoignages>
+    <app-rubrique-detail-contact *ngIf="rubrique.title === 'Contact'"></app-rubrique-detail-contact>
+  </div>
+  <div *ngIf="serviceID === undefined && rubrique.fragment === 'profil'" class="rubrique" id="accueil">
+    <app-rubrique-detail-header [rubrique]="rubrique"></app-rubrique-detail-header>
+    <app-rubrique-detail-profil *ngIf="rubrique.title === 'Profil'"></app-rubrique-detail-profil>
+  </div>
+</div>

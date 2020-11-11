@@ -1,0 +1,25 @@
+  <div class="padd-box">
+    <div class="filter">
+      <button data-filter="all" class="active" (click)="filterProjects($event);">Toutes</button>
+      <button data-filter="util" (click)="filterProjects($event);">Outils</button>
+      <button data-filter="specific" (click)="filterProjects($event);">Applications spécifiques</button>
+      <button data-filter="web" (click)="filterProjects($event);">Sites Web</button>
+      <button data-filter="cv" (click)="filterProjects($event);">CV créatifs</button>
+    </div>
+    <div class="grid">
+      <div class="grid-item-container" *ngFor="let realisation of realisations">
+        <article class="grid-item" [attr.data-category]="realisation.category.category">
+          <a class="project">
+            <figure class="figure">
+              <img [src]="realisation.picture" alt="{{ realisation.title }}">
+            </figure>
+            <div class="caption text-center">
+              <h2 class="title">{{ realisation.category.title }}</h2>
+              <p>{{ realisation.resume }}</p>
+              <span class="btn btn-action-primary" (click)="openModal(realisation.id);">En savoir plus</span>
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+
+  <div id="bubbles" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#bubbles" [attr.data-slide-to]="i" *ngFor="let item of this.temoignages; let i = index; let isFirst = first" [ngClass]="{'active' : isFirst}">
+      </li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item" *ngFor="let item of temoignages; let isFirst = first" [ngClass]="{'active' : isFirst}">
+        <div class="bubble">
+          <div class="bubble-header">
+            <h5 class="text-center">{{ item.typeConnaissance.text | uppercase  }}</h5>
+          </div>
+          <div class="quotes"><img src="../../../../assets/img/quotes.png" alt="double quotes" /></div>
+          <div class="testimonial">
+            <p>{{ item.testimonial }}</p>
+            <h6 class="author"><em>{{ item.firstName }} {{ item.lastName | slice:0:1 }}. &ndash; {{ item.job }} <span *ngIf="item.company !== ''">({{ item.company }})</span> &ndash; {{ item.date | date:'dd/MM/yyyy' }}</em></h6>
+          </div>
+          <div class="note" *ngIf="item.note === 1"><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></div>
+          <div class="note" *ngIf="item.note === 2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></div>
+          <div class="note" *ngIf="item.note === 3"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></div>
+          <div class="note" *ngIf="item.note === 4"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></div>
+          <div class="note" *ngIf="item.note === 5"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev hidden-xs hidden-sm" href="#bubbles" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">&Eacute;tape précédante</span>
+    </a>
+    <a class="carousel-control-next hidden-xs hidden-sm" href="#bubbles" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">&Eacute;tape suivante</span>
+    </a>
+  </div>
+<span id="temoigner" class="btn btn-action-primary" (click)="openModal()">Rédiger un commentaire</span>

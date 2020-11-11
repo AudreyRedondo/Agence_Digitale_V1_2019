@@ -1,0 +1,159 @@
+h5 {
+  font-size: 1.1em;
+  font-family: Avenir Next DemiBold;
+  padding-bottom: .5em;
+  padding-left: .4em;
+}
+
+.footer {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+.footer-btn {
+  top: -23px;
+  width: 3rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  left: 47%;
+  border-radius: 50%;
+  height: 3rem;
+}
+
+.footer-btn i {
+  color: white;
+}
+
+.footer-btn:focus, .toggle button:focus {
+  background-color: #73264d !important;
+  box-shadow: none;
+}
+
+.footer-btn:hover, .toggle button:hover {
+  background-color: #98888b !important;
+}
+
+.footer-btn:hover i, .toggle button:hover i {
+  color: #212529;
+}
+
+img {
+  filter: grayscale(60%);
+  -webkit-filter: grayscale(60%);
+  padding: 5px;
+}
+
+.technologies {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 2em 2em 3em;
+  flex-direction: column;
+}
+.partners {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.mentions {
+  background: url('../../../assets/img/background-footer.png');
+  border-top: solid .01em #404041;
+  display: flex;
+  min-height: 240px;
+}
+
+.propos {
+  display: flex;
+  width: 40%;
+  padding-top: 2.3em;
+  flex-direction: column;
+  align-items: center;
+}
+
+.company {
+  font-size: 1.3em;
+}
+
+.name {
+  font-size: .8em;
+  color: #646464;
+}
+
+.site-map, .legal {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2.8em;
+}
+
+ul li::before {
+  content: "\2022";
+  color: #d291b3;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.second, .third {
+  padding-left: 1em;
+}
+
+.second li::before {
+  content: "\26AC" !important;
+}
+
+.third li::before {
+  content: "\2025" !important;
+}
+
+.toggle {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.toggle button {
+  padding: .1em;
+  width: 1.5em;
+  height: 1.5em;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
+
+.toggle button i {
+  color: #98888b;
+  font-size: .9em;
+}
+
+@media (max-width: 768px) {
+
+  .footer-btn {
+    left: 47%;
+  }
+
+  .mentions {
+    background: initial;
+    flex-direction: column;
+  }
+
+  .propos, .site-map, .legal {
+    width: 100%;
+  }
+  .propos {
+    padding-bottom: 2.3em;
+    border-bottom: .01em solid #404041;
+  }
+}
+
+@media (max-width: 570px) {
+  .footer-btn {
+    left: 46%;
+  }
+}

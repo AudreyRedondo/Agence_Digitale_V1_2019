@@ -1,0 +1,128 @@
+.filter {
+  display: flex;
+  justify-content: flex-start;
+  margin: 35px auto;
+}
+  .filter button {
+    color: #ffffff;
+    opacity: .55;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border: 0;
+    padding-right: 40px;
+    background: 0 0;
+    transition: color .2s ease-out;
+  }
+.filter button.active, .filter button:hover {
+  opacity: 1;
+}
+.caption, .grid-item {
+  width: 100%;
+}
+.grid-item-container .grid-item {
+  width: 100%; 
+  display: block; 
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.grid-item-container:nth-child(2n+1) {
+  float: left;
+  padding: 1px;
+  width: 50%;
+}
+.grid-item-container:nth-child(2n) {
+  float: right;
+  padding: 1px;
+  width: 50%;
+}
+.project {
+  display: block;
+  cursor: pointer;
+  overflow: hidden;
+  text-decoration: none;
+}
+.figure, .project {
+  position: relative;
+}
+.figure {
+  margin: 0;
+  z-index: 1;
+  display:block;
+}
+.figure img {
+  width: 100%;
+  display: block;
+  -webkit-filter: grayscale(85%);
+  filter: grayscale(85%);
+}
+.project:hover .caption {
+  opacity: 1;
+  visibility: visible;
+}
+.project:hover .figure img {
+  -webkit-filter: none;
+  filter: none;
+}
+.project:hover .btn, .project:hover .title {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+.caption {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  height: 100%;
+  visibility: hidden;
+  left: 0;
+  padding: 20px;
+  color: #fff;
+  z-index: 2;
+  opacity: 0;
+  position: absolute;
+  background: rgba(0,0,0,.9);
+  transition: opacity .3s ease-in-out,visibility .3s ease-in-out;
+}
+.title {
+  font-size: 1.518em;
+  color: inherit;
+  margin-top: 0;
+  -webkit-transform: translateY(-10px);
+  -ms-transform: translateY(-10px);
+  transform: translateY(-10px);
+  transition: -webkit-transform .4s ease-in-out;
+  transition: transform .4s ease-in-out;
+  transition: transform .4s ease-in-out,-webkit-transform .4s ease-in-out;
+}
+.text {
+  font-size: .938em;
+  opacity: .7;
+}
+
+@media (min-width: 1200px){
+  .padd-box {
+    margin-left: 3.4%;
+    margin-right: 3.4%;
+  }
+}
+@media (max-width: 767px) {
+  .caption {
+    font-size: .5rem;
+    padding: 15px;
+  }
+  .filter button {
+    font-size: .7rem;
+    padding-right: 10px;
+  }
+  .filter {
+    margin: 15px auto;
+  }
+  .btn-action-primary {
+    line-height: 1rem;
+    padding: 0 0.325rem;
+    font-size: .9em;
+  }
+}

@@ -1,0 +1,23 @@
+<div class="mt-3">
+  <div>
+    <div>
+      <ul class="card-animated">
+        <li *ngFor="let competence of competences let isFirst = first" class="hide-on-init scrollPoint">
+          <div class="skill-card ml-xl-0 bg-dark" [ngClass]="{'illustration-inverted' : competence.id%2 !== 0}">
+            <div class="skill-card-content illustration">
+              <img [src]="competence.picture" alt="Illustation de compétence" />
+            </div>
+            <div class="skill-card-content skill-details">
+              <div class="title mb-2">
+                <h4 class="font-weight-bold first-subtitle">{{competence.title}}</h4>
+              </div>
+              <div class="details">
+                <div class="paragraph" [innerHTML]="competence.description"></div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

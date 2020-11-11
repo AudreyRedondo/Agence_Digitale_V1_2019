@@ -1,0 +1,7 @@
+<ul class="card-icon" *ngIf="this.links">
+  <li *ngFor="let link of this.links">
+    <a href="{{ link.href }}" target="_blank" aria-hidden="true" rel="noreferrer" name="{{ link.title }}" title="{{ link.title }}">
+      <i class="{{ link.icon }}"></i>
+    </a>
+  </li>
+</ul>

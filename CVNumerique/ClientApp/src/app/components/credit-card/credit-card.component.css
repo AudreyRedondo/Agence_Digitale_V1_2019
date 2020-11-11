@@ -1,0 +1,176 @@
+
+#payment {
+  display: flex;
+  align-items: unset;
+  width: 100%;
+}
+
+.brand {
+  padding: 7px 0;
+}
+
+#price {
+  width: 30%;
+  font-size: .8rem;
+  background: #4e1c35;
+  border-radius: 5px;
+  font-weight: 400;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  line-height: 8.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#creditCard {
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.credit-card {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background: white;
+  align-items: center;
+  padding: 0 0 0 10px;
+  border-top-right-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+}
+
+#card-number {
+  width: 100%;
+  border-top-right-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  padding: 0px 12px;
+}
+
+#card-expiry {
+  width: 100%;
+}
+
+#postal-code {
+  box-sizing: border-box;
+  height: inherit;
+  padding: 10px 12px;
+  border: none;
+  background-color: white;
+  margin-left: inherit;
+  border-top-right-radius: 0;
+  -webkit-border-top-right-radius: 0;
+  border-bottom-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  width: 100%;
+  color: #495057;
+  font-family: Arial;
+  font-size: 11px;
+  line-height: .9rem;
+}
+
+.StripeElement {
+  box-sizing: border-box;
+  height: inherit;
+  padding: 10px 12px;
+  border: none;
+  background-color: white;
+  margin-left: inherit;
+  width: 100%;
+}
+
+.InputContainer .InputElement {
+  position: relative;
+}
+
+.StripeElement--invalid {
+  border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+.StripeElement .ElementsApp input {
+  font-size: .9rem;
+}
+
+.text-error {
+  font-size: .7rem;
+  position: relative;
+  bottom: 12px;
+}
+
+em {
+  right: -10px;
+  position: absolute;
+}
+
+#card-errors {
+  font-size: .7rem;
+  position: absolute;
+}
+
+.errors {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+::after, ::before {
+  border-top-right-radius: 0;
+  -webkit-border-top-right-radius: 0;
+}
+
+@media (min-width: 1200px) {
+
+  #payment {
+    align-items: center;
+  }
+
+  #price {
+    width: 13%;
+    line-height: 2.23rem;
+  }
+
+  #creditCard {
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .credit-card {
+    width: 50%;
+    padding: .44rem 10px;
+    border-top-right-radius: 0;
+    -webkit-border-top-right-radius: 0;
+  }
+
+  .brand {
+    padding: unset;
+  }
+
+  #card-number {
+    width: 100%;
+  }
+
+  #card-expiry {
+    width: 20%;
+  }
+
+  #postal-code {
+    border-top-right-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    width: 25%;
+  }
+
+  .StripeElement {
+    width: 25%;
+  }
+
+  ::after, ::before {
+    border-top-right-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+  }
+}

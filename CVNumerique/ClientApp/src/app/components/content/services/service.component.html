@@ -1,0 +1,189 @@
+<div class="home ar ar-layers-1 ar-nav-on ar-nav-type2 ar-main-nav-on ar-side-box-on ar-sidebar-on">
+  <div class="ar-wrapper">
+
+    <header id="arHeader" class="ar-logo-in">
+      <app-nav-menu [isSmallNav]=true [nav]="nav" [serviceID]="serviceID"></app-nav-menu>
+    </header>
+
+    <div id="arContainer" class="ar-container">
+      <div id="scroll" detect-scroll (onScroll)="handleScroll($event)">
+        <div id="arSideBoxWrap" class="hidden-sm hidden-xs">
+          <div id="arSideBox" class="clear-mrg hide-on-init scrollPoint">
+            <div class="ar-side-box-1 clear-mrg">
+              <div id="wdg-sticky-start"></div>
+              <div id="sticky-widget-wrapper">
+                <div id="sticky-widget-inner" class="wdg-sticky" style=" top: auto; left: auto; width: auto; position: static;">
+                  <aside class="widget bg-primary clearfix ar_widget_card">
+                    <div class="ar-card bg-primary text-center">
+                      <div class="ar-card-avatar avatar-container rounded-circle p-2">
+                        <span class="ar-avatar-state">
+                          <span class="ar-avatar-state1">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 178.15 293.61" class="img-logo">
+                              <defs>
+                                <style>
+                                  .cls-1 {
+                                    fill: #98888b;
+                                  }
+
+                                  .cls-2 {
+                                    fill: #73264d;
+                                  }
+
+                                  .cls-3 {
+                                    fill: #514155;
+                                  }
+
+                                  .cls-4 {
+                                    fill: #3e3141;
+                                  }
+                                </style>
+                              </defs>
+                              <title>logo-P</title>
+                              <g data-name="Calque 2"><g><circle class="cls-1" cx="18.46" cy="172.61" r="18.46" /><path class="cls-2" d="M87.7,0C40.72,0,0,36.41,0,95.53v26.89s0,.1,0,.15a18.41,18.41,0,0,0,36.81,0s0-.1,0-.15l0,0V90.83C36.81,56,58.73,34.46,88.1,34.46c30.15,0,53.25,20.36,53.25,53.63,0,32.9-21.93,52.86-50.9,52.86H68.51a17.2,17.2,0,0,0-17.16,16.53c0,.09-.06.19-.06.27s0,.07,0,.1,0,.22,0,.33a17.22,17.22,0,0,0,17.23,17.23H101c43.46,0,77.13-39.15,77.13-87.32C178.15,41.5,143.31,0,87.7,0Z" /><circle class="cls-3" cx="18.46" cy="216.02" r="15.38" /><circle class="cls-4" cx="18.46" cy="253.27" r="12.3" /><circle class="cls-2" cx="18.46" cy="284.38" r="9.23" /></g></g>
+                            </svg>
+                          </span>
+                          <span class="ar-avatar-state2">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 178.15 293.61">
+                              <defs>
+                                <style>
+                                  .cls-1 {
+                                    fill: #98888b;
+                                  }
+
+                                  .cls-2 {
+                                    fill: #73264d;
+                                  }
+
+                                  .cls-3 {
+                                    fill: #514155;
+                                  }
+
+                                  .cls-4 {
+                                    fill: #3e3141;
+                                  }
+                                </style>
+                              </defs>
+                              <title>logo-P</title>
+                              <g data-name="Calque 2"><g><circle class="cls-1" cx="18.46" cy="172.61" r="18.46" /><path class="cls-2" d="M87.7,0C40.72,0,0,36.41,0,95.53v26.89s0,.1,0,.15a18.41,18.41,0,0,0,36.81,0s0-.1,0-.15l0,0V90.83C36.81,56,58.73,34.46,88.1,34.46c30.15,0,53.25,20.36,53.25,53.63,0,32.9-21.93,52.86-50.9,52.86H68.51a17.2,17.2,0,0,0-17.16,16.53c0,.09-.06.19-.06.27s0,.07,0,.1,0,.22,0,.33a17.22,17.22,0,0,0,17.23,17.23H101c43.46,0,77.13-39.15,77.13-87.32C178.15,41.5,143.31,0,87.7,0Z" /><circle class="cls-3" cx="18.46" cy="216.02" r="15.38" /><circle class="cls-4" cx="18.46" cy="253.27" r="12.3" /><circle class="cls-2" cx="18.46" cy="284.38" r="9.23" /></g></g>
+                            </svg>
+                          </span>
+                        </span>
+                      </div>
+                      <div class="ar-card-info clear-mrg">
+                        <div class="logo-info mb-5">
+                          <h1 class="performance pt-3">PERFORMANCE<span class="precision">PRÉCISION</span></h1>
+                          <p>votre partenaire réussite</p>
+                        </div>
+                        <app-liens-externes></app-liens-externes>
+                      </div>
+                    </div>
+                  </aside>
+                  <aside class="widget bg-dark clearfix">
+                    <div class="text-center">
+                      <a class="btn btn-action-primary" href="/telecharger/cv" target='blank' *ngIf="serviceID === 2">
+                        Téléchargez mon CV !
+                      </a>
+                      <a class="btn btn-action-primary" href="/telecharger/brochure" target='blank' *ngIf="serviceID !== 2">
+                        Téléchargez une brochure !
+                      </a>
+                    </div>
+                  </aside>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="arNavWrap" class="hidden-sm hidden-xs">
+          <app-nav-menu [isSmallNav]=false [nav]="nav" [serviceID]="serviceID" id="arNavInner" class="ar-sticky"></app-nav-menu>
+        </div>
+        <div class="ar-container-sm">
+          <div class="rubrique-container">
+            <div id="service" class="rubrique hide-on-init scrollPoint">
+              <div id="service-content">
+                <div class="header">
+                  <h2>{{ service?.title | uppercase }}</h2>
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">Description</a></li>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#process" role="tab" aria-controls="process" aria-selected="false">Déroulement</a></li>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#testimonials" role="tab" aria-controls="testimonials" aria-selected="false">Avis</a></li>
+                  </ul>
+                </div>
+                <div class="modal-body">
+                  <div class="tab-content">
+                    <div id="description" class="tab-pane fade show active" role="tabpanel" aria-labelledby="description-tab">
+                      <div class="modal-info">
+                        <div class="info pb-1">
+                          <dl>
+                            <dt>Pourquoi faire appel à moi ?</dt>
+                            <dd [innerHTML]="service?.longDescription" class="light"></dd>
+                          </dl>
+                        </div>
+                        <div class="info">
+                          <dl>
+                            <dt>Quel est le budget à prévoir ?</dt>
+                            <dd>
+                              <ul>
+                                <li *ngFor="let item of service?.priceList" class="priceList">
+                                  <i class="{{ item.prestation.icon }}"></i>
+                                  <span class="first-subtitle">{{ item.prestation.title }}</span>
+                                  <span *ngIf="item.prestation.price !== null && item.prestation.price != 0 && item.prestation.prestationID !== 8 && item.prestation.prestationID !== 10 && item.prestation.prestationID !== 11">{{ item.prestation.price }}&euro; {{ item.prestation.details }}</span>
+                                  <span *ngIf="item.prestation.price === null">{{ item.prestation.details }}</span>
+                                  <span *ngIf="item.prestation.prestationID === 8 || item.prestation.prestationID === 10 || item.prestation.prestationID === 11">A partir de {{ item.prestation.price }}&euro; {{ item.prestation.details }}</span>
+                                  <span *ngIf="item.prestation.price === 0">Gratuit {{ item.prestation.details }}</span>
+                                </li>
+                              </ul>
+                            </dd>
+                          </dl>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="process" class="tab-pane fade" role="tabpanel" aria-labelledby="process-tab">
+                      <div class="modal-carousel">
+                        <ol class="css-accordion">
+                          <li class="accordion-item" *ngFor="let item of service?.processList;let i = index; let isFirst = first">
+                            <input type="radio" name="accordion-control" [attr.id]="i" checked *ngIf="isFirst">
+                            <input type="radio" name="accordion-control" [attr.id]="i" *ngIf="!isFirst">
+                            <i class="{{ item.process.icon }}"></i>
+                            <label [attr.for]="i">{{ item.process.title | uppercase  }}</label>
+                            <div class="item-content-container">
+                              <div class="item-content">
+                                <div [innerHTML]="item.process.description" class="carousel-item-description"></div>
+                              </div>
+                            </div>
+                          </li>
+                        </ol>
+                      </div>
+                    </div>
+                    <div id="testimonials" class="tab-pane fade" role="tabpanel" aria-labelledby="testimonials-tab">
+                      <div class="modal-carousel">
+                        <p>Page en cours de construction</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <app-rubriques [rubriques]="rubriquesCV" [serviceID]="serviceID" class="ar-paper-layers ar-animated" *ngIf="serviceID === 2"></app-rubriques>
+
+          <footer id="arFooter" class="hide-on-init scrollPoint">
+            <app-footer></app-footer>
+          </footer>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ngx-ui-loader [loaderId]="loader.loaderId"
+               [hasProgressBar]="loader.hasProgressBar"
+               [logoUrl]="loader.logoUrl"
+               [logoSize]="loader.logoSize"
+               [fgsType]="loader.spinnerType"
+               [bgsType]="loader.spinnerType"
+               [overlayColor]="loader.overlayColor"
+               [pbThickness]="loader.pbThickness"
+               [fgsPosition]="loader.fgsPosition">
+
+</ngx-ui-loader>

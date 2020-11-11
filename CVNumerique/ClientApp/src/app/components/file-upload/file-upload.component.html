@@ -1,0 +1,5 @@
+<div (click)="fileInput.click()">
+  <span class="btn">Cliquez pour joindre votre CV habituel (ou le modèle à compléter que j'ai conçu)</span>
+  <span>{{file ? file.name : 'Aucun fichier joint' }}</span>
+  <input #fileInput class="file-input" type="file">
+</div>

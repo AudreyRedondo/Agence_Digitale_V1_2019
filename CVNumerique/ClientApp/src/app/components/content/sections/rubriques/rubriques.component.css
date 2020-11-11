@@ -1,0 +1,16 @@
+app-rubrique-detail {
+  display: contents;
+}
+
+.ar-paper {
+  position: relative;
+}
+
+@media (min-width: 992px) {
+  .ar-paper {
+    z-index: 3;
+  }
+  .ar-paper {
+    border: 1px solid transparent;
+  }
+}

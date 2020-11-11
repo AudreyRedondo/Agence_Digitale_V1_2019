@@ -1,0 +1,75 @@
+#container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.cible {
+  display: flex;
+  flex-direction: row;
+}
+
+.disc {
+  padding: 0 0 0 1em;
+  list-style-type: none;
+  text-align: justify;
+}
+
+.disc:last-child {
+  padding-right: 0;
+}
+
+ul li::before {
+  content: "\2022";
+  color: #d291b3;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+text.jqx-chart-legend-text {
+  display: none !important;
+}
+
+app-chart {
+  display: flex;
+  justify-content: center;
+  width: 19em;
+  height: 19em;
+}
+
+#counto {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  width: 13em;
+  margin-top: 0.1em;
+}
+
+#counto p {
+  font-size: 8em;
+  color: #73264d;
+}
+
+#counto label {
+  color: #dedede;
+  font-weight: 700;
+  font-size: 1.5em;
+  text-align: center;
+  font-family: Avenir Next Medium;
+  margin-bottom: 2.8rem;
+}
+
+@media (max-width: 992px) {
+  .cible {
+    flex-direction: column;
+  }
+  .cible ul:last-of-type {
+    margin-left: 0 !important;
+  }
+}
+
+

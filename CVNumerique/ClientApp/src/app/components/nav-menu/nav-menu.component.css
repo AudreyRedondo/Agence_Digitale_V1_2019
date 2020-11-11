@@ -1,0 +1,107 @@
+nav img {
+  width: 40px;
+  height: 40px;
+  z-index: 1;
+}
+
+#btnAccueil {
+  content: url("../../../assets/img/btn-logo.png");
+}
+
+.selected #btnAccueil, #btnAccueil:hover {
+  content: url("../../../assets/img/btn-logo-white.png");
+}
+
+#arNavScroll {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+#arNav, #arNavTools {
+  padding-left: 10px;
+  padding-top: 20px;
+}
+
+#arNavTools {
+  font-size: 22px;
+  padding-top: 10px;
+}
+
+#arNavTools .ar-icon {
+  display: block;
+}
+
+.ar-nav .ar-nav-img, .ar-nav li {
+  padding: 0px 10px 0 5px;
+  position: relative;
+  margin-bottom: 0.9rem;
+}
+
+.ar-nav a {
+  height: 42px;
+  line-height: 42px;
+  align-items: center;
+  display: flex;
+}
+
+.ar-nav i {
+  z-index: 1;
+  width: 36px;
+}
+
+.ar-nav a span {
+  font-size: .9em;
+  transition: ease-in-out all .4s;
+  position: relative;
+  left: -25px;
+  opacity: 0;
+  color: white;
+  line-height: .9em;
+}
+
+#arNavSm ul {
+  display: flex;
+  position: fixed;
+  background: rgba(26, 26, 28, 1);
+  width: 100%;
+  justify-content: center;
+  z-index: 1;
+}
+
+.fa {
+  font: normal normal normal 30px/1.7 FontAwesome;
+}
+
+.arrow-action i {
+  font: 35px/1.7 FontAwesome;
+}
+
+li:last-child .arrow-action i {
+  color: #514155;
+}
+
+@media (min-width: 1200px){
+  .ar-nav a.hash:hover span {
+    left: 5px;
+    opacity: 1;
+  }
+}
+
+@media (min-width: 992px) {
+  #arNavScroll {
+    position: fixed;
+  }
+}
+
+@media (max-width: 768px) {
+  .ar-nav li {
+    margin-bottom: 0;
+  }
+  nav img {
+    width: 24px;
+    height: 24px;
+  }
+  .fa {
+    font: 23px/1.7 FontAwesome;
+  }
+}

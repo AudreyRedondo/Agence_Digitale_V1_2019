@@ -1,0 +1,108 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <img src="../../../../../assets/img/contact.png" class="img-responsive hidden-xs" alt="Fond d'écran d'ordinateur servant à taper le message">
+      <div class="contact-off black"></div>
+      <div class="macbook-inner">
+        <div [ngClass]="{'sent' : success === true, 'none' : success === false}">
+          <img id="message" src="../../../../../assets/img/undraw_mailSent.png" alt="Message envoyé">
+          <span [ngClass]="{'success' : success === true }">{{resmessage}}</span>
+        </div>
+       
+        <div class="active animated fadeIn test ar-flex-row-reverse">
+
+          <div class="contact pt-5 hidden-xs" [ngClass]="{'visible' : success === false, 'hidden' : success === true}">
+            <div class="contact-info flex-column">
+              <p>PERFORMANCE PRECISION</p>
+              <p>978 route de Saint jean</p>
+              <p>06600 ANTIBES</p>
+              <p>06 XX XX XX XX</p>
+              <p><a href="mailto:contact@performanceprecision.fr">contact@performanceprecision.fr</a></p>
+            </div>
+          </div>
+
+          <div class="form" [ngClass]="{'block' : success === false, 'none' : success === true}">
+            <h3 class="hidden-xs light pl-3 pb-2" [ngClass]="{'block' : success === false, 'none' : success === true}">ENVOYEZ-MOI UN EMAIL</h3>
+
+            <form [formGroup]="contactForm" #f="ngForm" (ngSubmit)="execute();" class="needs-validation" [ngClass]="{'form-submit' : success === true}" novalidate>
+              <div class="flex-row">
+                <div class="form-group controls-inline flex-row">
+                  <input type="text" class="form-control" placeholder="Prénom" formControlName="firstName" id="firstName" aria-label="firstName" required />
+                  <em *ngIf="contactForm.controls['firstName'].hasError('required')" class="text-danger">*</em>
+                </div>
+
+                <div class="form-group controls-inline flex-row">
+                  <input type="text" class="form-control" placeholder="Nom" id="lastName" formControlName="lastName" aria-label="lastName" required />
+                  <em *ngIf="contactForm.controls['lastName'].hasError('required')" class="text-danger">*</em>
+                </div>
+              </div>
+              <span *ngIf="contactForm.controls['firstName'].hasError('minlength') ||contactForm.controls['lastName'].hasError('minlength')" class="text-danger text-error col-sm-12">
+                Le texte saisi doit avoir un minimum de 3 caractères.
+              </span>
+              <span *ngIf="contactForm.controls['firstName'].hasError('maxlength') || contactForm.controls['lastName'].hasError('maxlength')" class="text-danger text-error col-sm-12">
+                Le texte saisi doit avoir un maximum de 20 caractères.
+              </span>
+
+              <div class="flex-row">
+                <div class="form-group controls-inline flex-row">
+                  <input type="text" aria-label="company" class="form-control" placeholder="Entreprise" id="company" formControlName="company" />
+                  <em *ngIf="contactForm.controls['company'].hasError('required')" class="text-danger">*</em>
+                </div>
+
+                <div class="form-group controls-inline flex-row">
+                  <input type="text" aria-label="phone" class="form-control" placeholder="Téléphone" id="phone" formControlName="phone" required />
+                  <em *ngIf="contactForm.controls['phone'].hasError('required')" class="text-danger">*</em>
+                </div>
+              </div>
+              <span *ngIf="contactForm.controls['phone'].hasError('pattern')" class="text-danger text-error col-sm-12">
+                Le numéro de téléphone saisi n'est pas valide.
+              </span>
+
+              <div class="form-group flex-row controls">
+                <input type="email" aria-label="email" class="form-control" placeholder="Email" id="email" formControlName="email" required />
+                <em *ngIf="contactForm.controls['email'].hasError('required')" class="text-danger">*</em>
+              </div>
+              <span *ngIf="contactForm.controls['email'].hasError('pattern')" class="text-danger text-error col-sm-12">
+                L'adresse email saisie n'est pas valide.
+              </span>
+
+              <div class="form-group flex-row controls">
+                <textarea aria-label="message" class="form-control" placeholder="Message" id="message" formControlName="message" required></textarea>
+                <em *ngIf="contactForm.controls['message'].hasError('required')" class="text-danger">*</em>
+              </div>
+
+              <div class="form-group flex-row form-check controls">
+                <input type="checkbox" aria-label="agree" class="form-check-input" id="agree" formControlName="agree" required />
+                <em *ngIf="contactForm.controls['agree'].hasError('required')" class="text-danger">*</em>
+                <label class="form-check-label" for="agree" required>En cochant cette case, vous acceptez que les informations saisies dans ce formulaire soient exploitées afin de vous recontacter dans le cadre de la relation commerciale qui peut en découler.<b>*</b></label>
+                <input type="hidden" id="token" formControlName="token" />
+              </div>
+              <div class="form-group text-center controls" id="contactSubmit">
+                <div *ngIf="!f.valid" tooltip="{{ tooltip }}"
+                     placement="bottom">
+                  <button type="submit"
+                          class="btn btn-action-primary"
+                          [disabled]
+                          mat-button>
+                    Envoyer
+                  </button>
+                </div>
+                <div *ngIf="f.valid">
+                  <button
+                          mat-button
+                          type="submit"
+                          class="btn btn-action-primary"
+                          swIsLoading='contactForm-submited'
+                          [disabled]="!f.valid">
+                    Envoyer
+                  </button>
+                </div>
+              </div>
+            </form>
+            <span [ngClass]="{'none' : success === false, 'error' : error === true}">{{resmessage}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

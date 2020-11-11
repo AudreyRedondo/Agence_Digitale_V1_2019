@@ -1,0 +1,21 @@
+<div id="servicesContainer">
+  <div><h2 class="insetshadow pt-4 pb-3">Prestations proposées aux entreprises :</h2></div>
+  <div class="flex-row companies">
+    <div class=" flex-column" *ngFor="let service of servicesCompanies">
+      <img [ngClass]="{'renfort' : service.id === 2, 'website' : service.id === 3}" [src]=service.picture alt="{{ service.title }}" />
+      <h3 class="text-center mb-4">{{ service.title }}</h3>
+      <div [innerHTML]="service.shortDescription"></div>
+      <a [routerLink]="['/service', service.id]" fragment="service"><span class="btn btn-action-primary">En savoir plus</span></a>
+    </div>
+  </div>
+  <hr />
+  <div class="pt-4"><h2 class="insetshadow pb-3">Prestations proposées aux particuliers : </h2></div>
+  <div class="flex-row mb-3 individuals">
+    <div class=" flex-column scrollpoint hide-on-init" *ngFor="let service of servicesParticulars">
+      <img [ngClass]="{'website' : service.id === 3, 'resume' : service.id === 4}" [src]=service.picture alt="{{ service.title }}" />
+      <h3 class="text-center mb-4">{{ service.title }}</h3>
+      <div [innerHTML]="service.shortDescription"></div>
+      <a [routerLink]="['/service', service.id]" fragment="service"><span class="btn btn-action-primary">En savoir plus</span></a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+.title, .details, .competencesIcons, span {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.details {
+  flex-direction: column;
+}
+.details span i {
+  width: 15px;
+  text-align: center;
+}
+
+.text-muted, .text-muted i {
+  color: #b5b5b5!important;
+}
+
+.title {
+  justify-content: space-between;
+}
+
+.first-subtitle, .second-subtitle {
+  font-size: 1.1rem;
+}
+span {
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: baseline;
+}
+
+li.timeline-li.animated .step-content {
+-webkit-transform: scale(1);
+transform: scale(1);
+}
+.timeline-li:hover h2 i {
+  color: #98888b;
+  transition: none;
+}
+
+.hide-on-init {
+opacity:0;
+}

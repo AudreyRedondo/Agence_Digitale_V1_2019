@@ -1,0 +1,9 @@
+<div *ngIf="rubrique">
+  <h2 class="mb-3 white" *ngIf="rubrique.title === 'Profil'">{{ profil | uppercase }}</h2>
+  <h2 class="mb-3 white" *ngIf="rubrique.title === 'Témoignages'">{{ temoignages | uppercase }}</h2>
+  <h2 class="mb-3 white" *ngIf="rubrique.title !== 'Témoignages' && rubrique.title !== 'Profil'">{{rubrique.title | uppercase }}</h2>
+  <p *ngIf="rubrique.firstSubtitle" class="light first-subtitle">
+    {{rubrique.firstSubtitle}}
+    <span *ngIf="rubrique.secondSubtitle" class="second-subtitle">{{rubrique.secondSubtitle}}</span>
+  </p>
+</div>

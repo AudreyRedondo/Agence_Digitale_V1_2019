@@ -1,0 +1,329 @@
+
+.modal-close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 20px;
+  color: #fff;
+  opacity: 1;
+}
+
+#service-modal-content {
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column-reverse;
+  font-size: .9rem;
+  padding: 0;
+}
+
+.modal-carousel {
+  width: 100%;
+  height: unset;
+  padding-left: 0;
+}
+.carousel-item-description ul {
+  list-style-type: circle;
+}
+.carousel-indicators {
+  top: 0;
+}
+.carousel-control-next, .carousel-control-prev {
+  width: unset;
+}
+
+li i, li h6 {
+  opacity: 0;
+  padding-bottom: 5px;
+}
+li i {
+  font-size: 2rem;
+  padding-bottom: 5px;
+}
+li h6 {
+  font-size: .7rem;
+  padding-bottom: 5px;
+}
+
+.carousel-indicators .active i, .carousel-indicators .active h6 {
+  opacity: 1;
+}
+.carousel-indicators li {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  text-indent: unset;
+}
+
+.carousel-item {
+  width: 100%;
+}
+.carousel-item-body {
+  margin-top: 50px;
+}
+
+.card {
+  border-radius: 2rem;
+  background: url(../../../../assets/img/background.png) no-repeat;
+  border: unset;
+}
+.card-header:first-child {
+  border-radius: 2rem 2rem 0 0;
+}
+.card-header {
+  background-color: rgb(115, 38, 77);
+  border-bottom: none;
+}
+
+
+.carousel-item-body h5 {
+  padding: 25px 0 15px 0;
+  font-size: 1.1rem;
+}
+
+dd {
+  margin-bottom: 3rem;
+}
+dd:last-child {
+  margin-bottom: 0;
+}
+
+.modal-carousel dd {
+}
+
+
+
+.priceList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  font-size: .7rem;
+  margin: 3px;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,1),0 2px 10px 0 rgba(0,0,0,.1) !important;
+  max-width: 300px;
+}
+.priceList i {
+  opacity: 1;
+}
+.priceList span {
+  text-align: center;
+}
+
+.modal-info {
+  width: 100%;
+  display: flex;
+}
+
+.info {
+  padding: 20px 20px 20px 0;
+}
+.info:first-child {
+  width: 80%;
+}
+
+.modal-info ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 15px 0 0;
+  margin-bottom: 0;
+  align-items: center;
+  height: 100%;
+}
+
+.modal-info .first-subtitle {
+  font-size: .8rem;
+  font-weight: bold;
+}
+
+.modal-embed-iframe, .modal-embed-image, .modal-embed-video {
+  width: 96%;
+  padding-top: 50%;
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.modal-embed-iframe iframe, .modal-embed-image img, .modal-embed-video video {
+  top: 0;
+  left: 0;
+  border: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+}
+
+.slick-track {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.gray {
+  color: #888686;
+}
+
+label {
+  font-family: 'Cabin Sketch';
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+label:hover {
+color: #73264d;
+}
+
+label:hover:before {
+  background: #ff6cff;
+}
+
+label:before {
+font-family: 'Impact';
+text-align: center;
+content: counter(li);
+border: 7px solid #73264d;
+border-radius: 40px;
+display: inline-block;
+width: 50px;
+height: 50px;
+line-height: 35px;
+font-size: 24px;
+margin: 0 0.5em 0 0;
+color: #73264d;
+}
+
+.css-accordion {
+  list-style-type: none;
+  counter-reset: li;
+  padding: 20px 0;
+}
+
+.css-accordion .accordion-item {
+counter-increment: li;
+padding: 0;
+margin: 0;
+}
+
+.css-accordion .accordion-item .item-content-container {
+border-left: 10px solid #73264d;
+padding: 6px 0;
+margin: -10px 0 -2px 20px;
+}
+
+.css-accordion .accordion-item .item-content-container .item-content {
+  background: #eee;
+  padding: 0 1em;
+  overflow: hidden;
+  margin: 0 0 0 36px;
+  border-radius: 10px;
+  color: #343a40;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(255, 255, 255, 0.9);
+}
+
+.css-accordion .accordion-item .item-content-container .item-content p {
+  margin: 0.5em 0;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.9);
+}
+
+.css-accordion .accordion-item input[type=radio] {
+display: none;
+}
+
+.css-accordion .accordion-item input[type=radio] ~ .item-content-container {
+  overflow: hidden;
+}
+
+.css-accordion .accordion-item input[type=radio] ~ .item-content-container .item-content {
+  height: 0;
+  transition: all 0.3s linear;
+}
+
+.css-accordion .accordion-item input[type=radio]:checked ~ .item-content-container {
+  height: auto;
+  overflow: visible;
+}
+
+.css-accordion .accordion-item input[type=radio]:checked ~ .item-content-container .item-content {
+  height: auto;
+  overflow-y: auto;
+  transition: ease-in-out 0.5s linear;
+  padding: 20px;
+}
+
+.css-accordion .accordion-item input[type=radio]:checked + label {
+  color: #73264d;
+}
+
+.css-accordion .accordion-item input[type=radio]:checked + label:before {
+  color: #73264d;
+}
+
+
+@media (min-width: 1200px) {
+  .modal-content {
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+  .card {
+    background-attachment: fixed;
+  }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+
+}
+
+@media (min-width: 992px) {
+  .modal-content {
+    max-width: 900px;
+  }
+
+  .modal-body {
+    flex-direction: column;
+  }
+ 
+}
+@media (min-width: 768px) {
+  .modal-content {
+    max-width: 700px;
+  }
+  .carousel-item-body {
+  }
+  .carousel-item {
+    padding-left: 6%; 
+    padding-right: 6%; 
+  }
+ 
+  .modal-body {
+   padding: 1rem; 
+  }
+  
+  #service-modal-content {
+    padding: 40px 30px 0;
+  }
+  .header {
+    padding-left: 15px; 
+  }
+}
+@media (max-width: 480px) {
+
+  h2 {
+    font-size: 1.2rem;
+    margin: 30px 0;
+  }
+
+  span.btn {
+    font-size: .8rem;
+    width: 100%;
+  }
+}

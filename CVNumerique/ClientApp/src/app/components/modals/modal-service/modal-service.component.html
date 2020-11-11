@@ -1,0 +1,60 @@
+<button type="button" class="close modal-close" aria-label="Close" (click)="bsModalRef.hide()">
+  <span aria-hidden="true">&times;</span>
+</button>
+<div id="service-modal-content">
+  <div class="header">
+    <h2>{{ title | uppercase }}</h2>
+  </div>
+  <div class="modal-body">
+
+    <div class="modal-info">
+      <div class="info">
+        <dl>
+          <dt>Pour quoi faire ?</dt>
+          <dd [innerHTML]="description" class="gray"></dd>
+        </dl>
+      </div>
+      <div class="info">
+        <dl>
+        <dt>Quel est le budget à prévoir ?</dt>
+        <dd>
+          <ul>
+            <li *ngFor="let item of priceList" class="priceList">
+              <i class="{{ item.tarif.icon }}"></i>
+              <span class="first-subtitle">{{ item.tarif.title }}</span>
+              <span *ngIf="item.tarif.price !== null && item.tarif.price != 0 && item.tarif.id !== 8 && item.tarif.id !== 10 && item.tarif.id !== 11">{{ item.tarif.price }}&euro; {{ item.tarif.details }}</span>
+              <span *ngIf="item.tarif.price === null">{{ item.tarif.details }}</span>
+              <span *ngIf="item.tarif.id === 8 || item.tarif.id === 10 || item.tarif.id === 11">A partir de {{ item.tarif.price }}&euro; {{ item.tarif.details }}</span>
+              <span *ngIf="item.tarif.price === 0">Gratuit {{ item.tarif.details }}</span>
+            </li>
+          </ul>
+        </dd>
+        </dl>
+      </div>
+    </div>
+    <div class="modal-carousel">
+      <dl>
+        <dt>Et concrètement, comment ça se passe ?</dt>
+        <dd>
+          <ol class="css-accordion user-journey">
+            <li class="accordion-item" *ngFor="let item of process;let i = index; let isFirst = first">
+              <input type="radio" name="accordion-control" [attr.id]="i" checked *ngIf="isFirst">
+              <input type="radio" name="accordion-control" [attr.id]="i" *ngIf="!isFirst">
+              <label [attr.for]="i">{{ item.process.title | uppercase  }}</label>
+              <div class="item-content-container">
+                <div class="item-content">
+                  <div [innerHTML]="item.process.description" class="carousel-item-description"></div>
+                </div>
+              </div>
+            </li>
+          </ol>
+        </dd>
+      </dl>
+    </div>
+  </div>
+</div>
+
+<p>Ce document permettra de définir l'ensemble de vos besoins :</p>
+<ul><li><p><strong class='light'>Pré-commande :</strong> nous organisons une rencontre selon nos diponibilités (physiquement dans les Alpes Maritimes ou par Visio-conférence), afin de définir votre besoin. Il sera détaillé ensuite dans un document servant de feuille de route et de base contractuelle (cahier des charges) :</p><ul><li><p><strong class='light'> Contexte du projet :</strong> présentation du projet et définition des objectifs.</p></li><li> <p><strong class='light'> Spécifications fonctionnelles :</strong> fonctionnalités attendues.</p></li><li><p><strong class='light'> Spécifications techniques :</strong> définition de la charte graphique, de l'ergonomie, des utilisateurs du site et de leur profil, etc...</p></li><li><p><strong class='light'> Délai de mise en oeuvre souhaité.</strong></p></li></ul></li><li><p><strong class='light'>Calcul de la durée de réalisation :</strong> sur la base de notre échange, j'estime les temps de développement, je calcule l'acompte à verser et vous transmets un devis, accompagné d'une vidéo présentant trois rendus visuels différents de ce à quoi ressemblerait votre site, si vous m'en confiez le développement.</p></li><li><p><strong class='light'>Demarrage du projet :</strong> mes travaux débutent dès réception de l'acompte ainsi que du devis portant votre accord et mentionnant le thème choisi. Le montant de l'acompte correspond à 1/3 du tarif facturé, qui varie selon les fonctionnalités attendues dans le site Web à développer.</p></li></ul>
+
+<ul><li><p><strong class='light'>Guide d'utilisation  :</strong> je conçois un guide d’entretien que vous pourrez télécharger gratuitement lors de la commande, pour que vous puissiez vous préparer aux grandes étapes contenues dans un entretien de recrutement.</p></li><li><p><strong class='light'>Questions :</strong> : je rédige un ensemble de questions généralistes et d’autres orientées sur votre métier, qui me semblent pertinentes à poser lors d’un entretien, afin que vous puissiez préparer vos réponses. Ce document sera proposé à la commande dans le lien que je vous aurai transmis</p></li></ul>

@@ -1,0 +1,82 @@
+<div class="footer bg-dark">
+  <button class="btn footer-btn bg-primary" type="button" name="btn-footer" aria-label="btn-footer" data-toggle="collapse" data-target="#footerContent" aria-expanded="false" aria-controls="footerContent" (click)="changeIcon()">
+    <i class="fa fa-chevron-{{ sign }} "></i>
+  </button>
+
+  <div class="collapse" id="footerContent">
+    <div class="technologies pt-4">
+      <p>Site développé par Audrey REDONDO en 2019, à l'aide des technologies :</p>
+      <div class="partners">
+        <img src="../assets/img/aspNetCore.png" alt="Logo ASP.Net core" />
+        <img src="../assets/img/angular7.png" alt="Logo Angular7" />
+        <img src="../assets/img/sqlServer-partner.png" alt="Logo SQL Server" />
+        <img src="../assets/img/azure.png" alt="Logo Microsof Azure" />
+        <img src="../assets/img/stripe.png" alt="Logo Stripe" />
+        <img src="../assets/img/chartJS-partner.png" alt="Logo ChartJS" />
+        <img src="../assets/img/bootstrap-partner.png" alt="Logo Bootstrap" />
+        <img src="../assets/img/jQuery.png" alt="Logo JQuery" />
+      </div>
+    </div>
+    <div class="mentions">
+      <div class="propos">
+        <p class="mb-0 company"><span class="performance">PERFORMANCE</span><span class="precision">PRECISION</span></p>
+        <p class="name">Micro-entreprise représentée par Audrey REDONDO</p>
+        <p class="mb-0">RCS Antibes</p>
+        <p class="mb-0">SIRET : blablabla</p>
+        <p class="mb-0">978 route de Saint Jean</p>
+        <p class="mb-0">Appartement B 41</p>
+        <p class="mb-0">06600 ANTIBES</p>
+      </div>
+      <div class="site-map">
+        <div class="toggle">
+          <button class="btn bg-primary" name="btn-footer-site-map" aria-label="btn-footer-site-map" type="button" data-toggle="collapse" data-target="#siteMap" aria-expanded="false" aria-controls="siteMap" (click)="changeToggleIcon(1)">
+            <i class="fa fa-{{ toggleSign1 }}-circle "></i>
+          </button>
+          <h5>PLAN DU SITE</h5>
+        </div>
+        <ul id="siteMap" class="collapse">
+          <li><a [routerLink]="['/presentation']" fragment="profil">Profil</a></li>
+          <li>
+            <a [routerLink]="['/presentation']" fragment="services">Services aux entreprises</a>
+            <ul class="second">
+              <li><a [routerLink]="['/service/', 1]" fragment="service">Automatisation de process</a></li>
+              <li>
+                <a [routerLink]="['/service/', 2]" fragment="service">Renfort technique</a>
+                <ul class="third">
+                  <li><a [routerLink]="['/service/', 2]" fragment="profil">Profil</a></li>
+                  <li><a [routerLink]="['/service/', 2]" fragment="experiences_professionnelles">Expériences professionnelles</a></li>
+                  <li><a [routerLink]="['/service/', 2]" fragment="formation">Formations & auto-formations</a></li>
+                </ul>
+              </li>
+              <li><a [routerLink]="['/service/', 3]" fragment="service">Création de sites Web</a></li>
+            </ul>
+          </li>
+          <li>
+            <a [routerLink]="['/presentation']" fragment="services">Services aux particuliers</a>
+            <ul class="second">
+              <li><a [routerLink]="['/service/', 8]" fragment="service">Création de sites Web</a></li>
+              <li><a [routerLink]="['/service/', 4]" fragment="service">Création de CV créatifs</a></li>
+            </ul>
+          </li>
+          <li><a [routerLink]="['/presentation']" fragment="competences">Compétences</a></li>
+          <li><a [routerLink]="['/presentation']" fragment="commentaires">Commentaires</a></li>
+          <li><a [routerLink]="['/presentation']" fragment="realisations">Réalisations</a></li>
+          <li><a [routerLink]="['/presentation']" fragment="contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="legal">
+        <div class="toggle">
+          <button class="btn bg-primary" name="btn-footer-legal" aria-label="btn-footer-legal" type="button" data-toggle="collapse" data-target="#legal" aria-expanded="false" aria-controls="legal" (click)="changeToggleIcon(2)">
+            <i class="fa fa-{{ toggleSign2 }}-circle "></i>
+          </button>
+          <h5>MENTIONS LEGALES</h5>
+        </div>
+        <ul id="legal" class="collapse">
+          <li><a href="#">Politique de confidentialité</a></li>
+          <li><a href="#">CGV</a></li>
+          <li><a href="#">CGU</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

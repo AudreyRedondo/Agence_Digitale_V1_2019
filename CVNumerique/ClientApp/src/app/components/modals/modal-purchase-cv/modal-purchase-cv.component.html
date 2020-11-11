@@ -1,0 +1,136 @@
+<button type="button" class="close modal-close" aria-label="Close" (click)="bsModalRef.hide()">
+  <span aria-hidden="true">&times;</span>
+</button>
+<div id="temoignage-modal-content">
+  <div class="header">
+    <h2>{{ title | uppercase }}</h2>
+  </div>
+  <div class="modal-body">
+    <div class="form">
+      <form [formGroup]="preorderForm" #f="ngForm" (ngSubmit)="execute();" id="preOrder" class="needs-validation" [ngClass]="{'form-submit' : success === true}" novalidate>
+        <div class="flex-row">
+          <div class="form-group controls-inline flex-row">
+            <input type="text" class="form-control" placeholder="Prénom" formControlName="firstName" id="firstName" required />
+            <em *ngIf="preorderForm.controls['firstName'].hasError('required')" class="text-danger">*</em>
+          </div>
+
+          <div class="form-group controls-inline flex-row">
+            <input type="text" class="form-control" placeholder="Nom" id="lastName" formControlName="lastName" required />
+            <em *ngIf="preorderForm.controls['lastName'].hasError('required')" class="text-danger">*</em>
+          </div>
+        </div>
+        <span *ngIf="preorderForm.controls['firstName'].hasError('minlength') || preorderForm.controls['lastName'].hasError('minlength')" class="text-danger text-error col-sm-12">
+          Le texte saisi doit avoir un minimum de 3 caractères.
+        </span>
+        <span *ngIf="preorderForm.controls['firstName'].hasError('maxlength') || preorderForm.controls['lastName'].hasError('maxlength')" class="text-danger text-error col-sm-12">
+          Le texte saisi doit avoir un maximum de 50 caractères.
+        </span>
+        <span *ngIf="preorderForm.controls['firstName'].hasError('pattern') || preorderForm.controls['lastName'].hasError('pattern')" class="text-danger text-error col-sm-12">
+          Seuls les caractères alphanumériques sont acceptés.
+        </span>
+
+        <div class="flex-row">
+          <div class="form-group controls-inline flex-row">
+            <input type="text" class="form-control" placeholder="Métier" id="job" formControlName="job" required />
+            <em *ngIf="preorderForm.controls['job'].hasError('required')" class="text-danger">*</em>
+          </div>
+
+          <div class="form-group controls-inline flex-row">
+            <input type="text" class="form-control" placeholder="Téléphone" id="phone" formControlName="phone" required />
+            <em *ngIf="preorderForm.controls['phone'].hasError('required')" class="text-danger">*</em>
+          </div>
+        </div>
+        <span *ngIf="preorderForm.controls['job'].hasError('minlength')" class="text-danger text-error col-sm-12">
+          Le texte saisi doit avoir un minimum de 3 caractères.
+        </span>
+        <span *ngIf="preorderForm.controls['job'].hasError('maxlength')" class="text-danger text-error col-sm-12">
+          Le texte saisi doit avoir un maximum de 50 caractères.
+        </span>
+        <span *ngIf="preorderForm.controls['job'].hasError('pattern')" class="text-danger text-error col-sm-12">
+          Seuls les caractères alphanumériques sont acceptés.
+        </span>
+        <span *ngIf="preorderForm.controls['phone'].hasError('pattern')" class="text-danger text-error col-sm-12">
+          Le numéro de téléphone saisi n'est pas valide.
+        </span>
+
+        <div class="form-group flex-row controls">
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">@</div>
+            </div>
+            <input type="text" class="form-control" id="email" placeholder="Email" formControlName="email" required />
+          </div>
+          <em *ngIf="preorderForm.controls['email'].hasError('required')" class="text-danger">*</em>
+        </div>
+        <span *ngIf="preorderForm.controls['email'].hasError('pattern')" class="text-danger text-error col-sm-12">
+          L'adresse email saisie n'est pas valide.
+        </span>
+
+        <div class="form-group flex-row controls">
+          <app-file-upload formControlName="resume" id="resume" (fileSaved)="getFile($event)"></app-file-upload>
+          <em *ngIf="preorderForm.controls['resume'].hasError('required')" class="text-danger">*</em>
+        </div>
+
+
+        <div class="form-group flex-row controls">
+          <textarea class="form-control" placeholder="Saisissez ici toute information que vous souhaiteriez me communiquer concernant la conception de votre CV." id="details" formControlName="details"></textarea>
+          <em *ngIf="preorderForm.controls['details'].hasError('required')" class="text-danger">*</em>
+        </div>
+        <span *ngIf="preorderForm.controls['details'].hasError('minlength')" class="text-danger text-error col-sm-12">
+          Le texte saisi doit avoir un minimum de 150 caractères.
+        </span>
+        <span *ngIf="preorderForm.controls['details'].hasError('maxlength')" class="text-danger text-error col-sm-12">
+          Le texte saisi doit avoir un maximum de 350 caractères.
+        </span>
+
+        <div class="hide-or-show">
+          <div class="form-group flex-row form-check controls">
+            <input type="checkbox" class="form-check-input" id="agree" formControlName="agree" required />
+            <em *ngIf="preorderForm.controls['agree'].hasError('required')" class="text-danger">*</em>
+            <label class="form-check-label" for="agree">En cochant cette case, vous acceptez que les informations saisies dans ce formulaire soient exploitées afin qu'un CV personnalisé puisse être conçu, et afin de vous recontacter dans le cadre de la relation commerciale qui en découle.<b>*</b></label>
+          </div>
+
+          <div class="form-group flex-row form-check controls">
+            <input type="checkbox" class="form-check-input" id="downPayment" formControlName="downPayment" [checked]="check" required />
+            <em *ngIf="preorderForm.controls['downPayment'].hasError('required')" class="text-danger">*</em>
+            <label class="form-check-label" for="downPayment">En cochant cette case, vous acceptez de règler un acompte correspondant à 1/3 du tarif facturé pour déclencher la conception d'un CV pertinent et original selon les informations que j'ai fourni. Ce montant sera ensuite déduit du montant total lors de votre commande finale.</label>
+            <input type="hidden" id="token" formControlName="token" />
+          </div>
+        </div>
+
+        <app-credit-card class="form-group controls"
+                         [ngClass]="{'show' : preorderForm.controls['downPayment'].value === true}"
+                         [amount]="amount"
+                         [price]="price"
+                         [formGroup]="preorderForm">
+
+        </app-credit-card>
+        
+        <div class="form-group text-center controls" id="preorderSubmit">
+          <div *ngIf="!f.valid" tooltip="{{ tooltip }}"
+               placement="bottom">
+            <button type="submit"
+                    class="btn btn-action-primary"
+                    [disabled]="!f.valid"
+                    id="submit">
+              Pré-Commander
+            </button>
+          </div>
+          <div *ngIf="f.valid">
+            <button type="submit"
+                    class="btn btn-action-primary"
+                    [disabled]="!f.valid"
+                    id="submit">
+              Pré-Commander
+            </button>
+          </div>
+        </div>
+
+      </form>
+      <div [ngClass]="{'success' : success === true, 'error' : error === true}">
+        <img src="../../assets/img/undraw_orderResume.png" alt="commentaires" />
+        <span>{{resmessage}}</span>
+      </div>
+    </div>
+  </div>
+</div>

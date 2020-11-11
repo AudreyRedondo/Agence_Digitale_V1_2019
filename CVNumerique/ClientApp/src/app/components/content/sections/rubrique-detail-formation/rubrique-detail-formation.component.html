@@ -1,0 +1,53 @@
+<div class="mt-3 mb-5">
+  <div class="col-md-12">
+    <div class="timeline-main">
+      <ul class="stepper stepper-vertical timeline timeline-animated">
+        <li class="timeline-li hide-on-init" [ngClass]="{'timeline-inverted' : formation.id%2 === 0}" *ngFor="let formation of formations">
+          <div class="xp-icon hide-on-init">
+            <span class="circle z-depth-1-half"><i class="fa fa-graduation-cap" aria-hidden="true"></i></span>
+          </div>
+          <div class="step-content z-depth-1 ml-xl-0 p-3 bg-dark hide-on-init">
+            <div class="title">
+              <h4 class="font-weight-bold first-subtitle">{{formation.training}}</h4><h4 class="second-subtitle">{{formation.trainingCenter | uppercase}}</h4>
+            </div>
+            <div class="details">
+              <span class="text-muted"><i class="fa fa-map-marker"></i>&ensp;{{formation.city}}</span>
+              <span class="text-muted" *ngIf="formation.end !== null"><i class="fa fa-clock-o "></i>&ensp;{{formation.startDate | date:'MMMM yyyy' }} &ndash; {{formation.endDate | date:'MMMM yyyy' }} ({{ dateDiff(formation.startDate, formation.endDate) }} mois)</span>
+              <span class="text-muted"><i class="fa fa-info-circle"></i>&ensp;{{ formation.sector }}</span>
+              <span class="text-muted" *ngIf="formation.context != ''"><i class="fa fa-book"></i>&ensp;{{ formation.context }}</span>
+              <span class="text-muted" *ngIf="formation.graduate === true"><i class="fa fa-check"></i>&ensp;Diplôme obtenu</span>
+            </div>
+            <div class="mt-4" [innerHTML]="formation.details"></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<hr />
+<div class="mt-5">
+  <div class="col-md-12">
+    <div class="timeline-main">
+      <ul class="stepper stepper-vertical timeline timeline-animated">
+        <li class="timeline-li hide-on-init" [ngClass]="{'timeline-inverted' : formation.id%2 === 0}" *ngFor="let formation of certifications">
+          <div class="xp-icon hide-on-init">
+            <span class="circle z-depth-1-half"><i class="fa fa-trophy" aria-hidden="true"></i></span>
+          </div>
+          <div class="step-content z-depth-1 ml-xl-0 p-3 bg-dark hide-on-init">
+            <div class="title mb-2">
+              <h4 class="font-weight-bold first-subtitle">{{formation.training}}</h4><h4 class="second-subtitle">{{formation.trainingCenter | uppercase}}</h4>
+            </div>
+            <div class="details">
+              <span class="text-muted"><i class="fa fa-map-marker"></i>&ensp;{{formation.city}}</span>
+              <span class="text-muted"><i class="fa fa-clock-o "></i>&ensp;{{formation.startDate | date:'MMMM yyyy' }}</span>
+              <span class="text-muted"><i class="fa fa-info-circle"></i>&ensp;{{ formation.sector }}</span>
+              <span class="text-muted" *ngIf="formation.context != ''"><i class="fa fa-book"></i>&ensp;{{ formation.context }}</span>
+              <span class="text-muted" *ngIf="formation.graduate === true"><i class="fa fa-check"></i>&ensp;Certificat de réussite obtenu</span>
+            </div>
+            <div class="mt-4" [innerHTML]="formation.details"></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

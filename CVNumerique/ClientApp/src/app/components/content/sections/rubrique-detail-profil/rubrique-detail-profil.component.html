@@ -1,0 +1,26 @@
+<div class="paragraph" *ngIf="serviceID !==2">
+  <p class='mb-2'>
+    Fondée en 2019 par Audrey Redondo,
+    <span class='performance'> PERFORMANCE</span><span class='precision'>PRÉCISION</span>
+    est une micro-entreprise qui conçoit des :
+  </p>
+  <ul class='mb-3 disc'>
+    <li>solutions informatiques, personnalisées aux problématiques spécifiques des entreprises ;</li>
+    <li>vitrines sur Internet, personnalisées aux besoins des professionnels et des particuliers ;</li>
+    <li>CV créatifs et des documents, personnalisés aux objectifs des personnes en recherche d'emploi.</li>
+  </ul>
+</div>
+<div class="paragraph" *ngIf="serviceID ===2">
+  <p>En quelques mots, je suis une personne dynamique au parcours atypique, qui est animée par la volonté d'aider les autres.</p>
+  <p class='mb-2'>Auparavant assistante, puis développeuse-autodidacte, j'ai acquis de solides compétences par le biais de multiples expériences professionnelles, formations, auto-formations et activités bénévoles.</p>
+  <p class='mb-2'>Aujourd'hui indépendante, je peux intégrer votre équipe dans le cadre d'une mission freelance.
+</div>
+
+<div id="container" class="mt-5" *ngIf="serviceID ===2">
+  <div id="counto" counto [step]="50" [countTo]="4" [countFrom]="0" [duration]="0.6" (countoChange)="counto = $event">
+    <label class="mt-1">Années d'expérience</label>
+    <p>{{counto | number:'1.1-1'}}</p>
+  </div>
+  <app-chart [isLoaded]="isLoaded" [chartModel]="projects" class="mb-4"></app-chart>
+  <app-chart [isLoaded]="isLoaded" [chartModel]="experience"></app-chart>
+</div>

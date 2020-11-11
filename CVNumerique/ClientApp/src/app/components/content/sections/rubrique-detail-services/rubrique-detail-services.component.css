@@ -1,0 +1,62 @@
+hr {
+  border-top: 5px solid rgba(0,0,0,.1);
+}
+
+.companies .flex-column {
+  justify-content: space-between;
+  width: 30%;
+}
+
+.individuals .flex-column {
+  justify-content: space-between;
+  width: 36%;
+}
+
+.flex-row.companies {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 4em;
+}
+
+.flex-row.individuals {
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding-bottom: 4em;
+}
+
+img {
+  padding: 10px;
+  margin: 0 auto;
+}
+
+h5 {
+  margin-bottom: .8rem;
+}
+
+.insetshadow {
+  font-size: 1.4rem;
+  color: #858585;
+  background-color: #27272b;
+  letter-spacing: .1em;
+  text-shadow: -1px -1px 1px #111, 2px 2px 1px #363636;
+}
+
+@media (max-width: 992px) {
+  .flex-row {
+    flex-direction: column!important;
+  }
+  .companies .flex-column, .individuals .flex-column {
+    width: 100%;
+  }
+  img {
+    margin: auto;
+  }
+  .btn-action-primary {
+    font-size: .9rem;
+    line-height: 1.5rem;
+  }
+
+  .insetshadow {
+    font-size: 1.4rem;
+  }
+}

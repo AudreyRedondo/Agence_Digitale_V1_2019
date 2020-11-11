@@ -1,0 +1,19 @@
+﻿@page
+@model ErrorModel
+@{
+    ViewData["Title"] = "Error";
+}
+
+<h1 class="error-page-title">OOPS</h1>
+
+<div class="error-page-content">
+    <h2 class="text-danger">Une erreur s'est produite...</h2>
+
+    @if (Model.ShowRequestId)
+    {
+        <p>
+            <strong>Request ID:</strong> <code>@Model.RequestId</code>
+        </p>
+    }
+</div>
+<a href="http://v1-site-pro.app-performanceprecision.fr/" class="error-page-btn">REVENIR SUR LA PAGE D'ACCUEIL</a>

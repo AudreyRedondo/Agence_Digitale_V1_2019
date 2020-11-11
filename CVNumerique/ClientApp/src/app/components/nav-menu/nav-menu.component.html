@@ -1,0 +1,105 @@
+<nav id="arNavSm" class="ar-nav hidden-lg hidden-md" *ngIf="isSmallNav === true && nav === null">
+  <ul class="clear-list">
+    <li *ngFor="let rubrique of this.rubriquesHome"
+        [class.selected]="rubrique === selectedRubrique"
+        [ngClass]="{'active': rubrique === selectedRubrique }"
+        (click)="unSelect($event); select(rubrique, $event)"
+        class="dark rounded-circle text-center">
+      <a *ngIf="rubrique.fragment === 'profil'" [routerLink]="['/presentation']" fragment="accueil" class="hash" name="Accueil">
+        <img id="btnAccueil" src="assets/img/btn-logo.png" alt="Bouton d'accueil" />
+        <span>Accueil</span>
+      </a>
+      <a *ngIf="rubrique.fragment !== 'profil'" [routerLink]="['/presentation']" fragment="{{ rubrique.fragment }}" class="hash" name="{{ rubrique.title }}">
+        <i class="{{ rubrique.icon }}"></i>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<nav id="arNavSm" class="ar-nav hidden-lg hidden-md" *ngIf="isSmallNav === true && nav !== null">
+  <ul class="clear-list">
+    <li class="dark rounded-circle text-center">
+      <a [routerLink]="['/presentation']" fragment="profil" class="hash arrow-action" name="Retour">
+        <i class="fa fa-arrow-circle-left"></i>
+      </a>
+    </li>
+    <li *ngFor="let rubrique of this.nav"
+        [class.selected]="rubrique === selectedRubrique"
+        [ngClass]="{'active': rubrique === selectedRubrique }"
+        (click)="unSelect($event); select(rubrique, $event)"
+        class="dark rounded-circle text-center">
+      <a *ngIf="rubrique.fragment === 'contact'" [routerLink]="['/presentation']" fragment="{{ rubrique.fragment }}" class="hash" name="{{ rubrique.title }}">
+        <i class="{{ rubrique.icon }}"></i>
+        <span>{{ rubrique.title }}</span>
+      </a>
+      <a *ngIf="rubrique.fragment !== 'contact'" [routerLink]="['/service', serviceID]" fragment="{{ rubrique.fragment }}" class="hash" name="{{ rubrique.title }}">
+        <i class="{{ rubrique.icon }}"></i>
+        <span>{{ rubrique.title }}</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<div class="ar-nav-cont hidden-xs" *ngIf="isSmallNav === false && nav === null">
+  <div id="arNavScroll" class="hide-on-init scrollPoint">
+    <nav id="arNav" class="ar-nav">
+      <ul class="clear-list">
+        <li *ngFor="let rubrique of this.rubriquesHome; let first = first"
+            [class.selected]="rubrique === selectedRubrique"
+            [ngClass]="{'active': rubrique === selectedRubrique }"
+            (click)="unSelect($event); select(rubrique, $event)"
+            class="dark rounded-circle text-center">
+          <a *ngIf="rubrique.fragment === 'profil'" [routerLink]="['/presentation']" fragment="accueil" class="hash" name="Accueil">
+            <img id="btnAccueil" src="assets/img/btn-logo.png" alt="Bouton d'accueil" />
+            <span>Accueil</span>
+          </a>
+          <a *ngIf="rubrique.fragment !== 'profil'" [routerLink]="['/presentation']" fragment="{{ rubrique.fragment }}" class="hash" name="{{ rubrique.title }}">
+            <i class="{{ rubrique.icon }}"></i>
+            <span>{{ rubrique.title }}</span>
+          </a>
+
+        </li>
+        <li (click)="unSelect(); initSelectedRubrique()">
+          <a [routerLink]="['/presentation']" fragment="accueil" class="arrow-action hash mt-5" name="Remonter">
+            <i class="fa fa-arrow-circle-up "></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<div class="ar-nav-cont hidden-xs" *ngIf="isSmallNav === false && nav !== null">
+  <div id="arNavScroll" class="hide-on-init scrollPoint">
+    <nav id="arNav" class="ar-nav">
+      <ul class="clear-list">
+        <li class="dark rounded-circle text-center">
+            <a [routerLink]="['/presentation']" fragment="profil" class="hash mb-5 arrow-action" name="Retour">
+              <i class="fa fa-arrow-circle-left"></i>
+              <span>Retour</span>
+            </a>
+        </li>
+        <li *ngFor="let rubrique of this.nav; let first = first;"
+            [class.selected]="rubrique === selectedRubrique"
+            [ngClass]="{'active': rubrique === selectedRubrique }"
+            (click)="unSelect($event); select(rubrique, $event)"
+            class="dark rounded-circle text-center">
+          <a *ngIf="rubrique.fragment === 'contact'" [routerLink]="['/presentation']" fragment="{{ rubrique.fragment }}" class="hash" name="{{ rubrique.title }}">
+            <i class="{{ rubrique.icon }}"></i>
+            <span>{{ rubrique.title }}</span>
+          </a>
+          <a *ngIf="rubrique.fragment !== 'contact'" [routerLink]="['/service', serviceID]" fragment="{{ rubrique.fragment }}" class="hash" name="{{ rubrique.title }}">
+            <i class="{{ rubrique.icon }}"></i>
+            <span>{{ rubrique.title }}</span>
+          </a>
+        </li>
+        <li (click)="unSelect(); initSelectedRubrique()">
+          <a [routerLink]="['/service', serviceID]" fragment="service" class="hash mt-5 arrow-action" name="Remonter">
+            <i class="fa fa-arrow-circle-up "></i>
+            <span>Remonter</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

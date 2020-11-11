@@ -1,0 +1,34 @@
+
+<button type="button" class="close modal-close" aria-label="Close" (click)="bsModalRef.hide()">
+  <span aria-hidden="true">&times;</span>
+</button>
+<div id="realisation-modal-content">
+  <div class="modal-slide">
+    <div *ngIf="category.category !== 'web' && category.category !== 'cv'" class="modal-embed modal-embed-iframe" data-type="iframe" data-width="419"
+         data-height="293" [attr.data-url]="link">
+      <iframe [src]="link" style="" allowfullscreen="true"></iframe>
+    </div>
+    <img width="350" height="300" [src]="picture" *ngIf="category.category === 'web' || category.category === 'cv'" alt="{{ title }}" />
+  </div>
+
+  <div class="modal-info">
+    <div>
+      <h2>{{ title | uppercase }}</h2>
+      <p class="text-muted"> <strong>{{ category.title }}</strong></p>
+      <dl>
+        <dt>Projet</dt>
+        <dd>{{ project }}</dd>
+        <dt>Client</dt>
+        <dd>{{ client }}</dd>
+        <dt>Livraison</dt>
+        <dd>{{ delivered | date:'MMMM yyyy'}}</dd>
+      </dl>
+      <h6 *ngIf="category.category !== 'cv'">Compétences utilisées</h6>
+      <div class="competencesIcons mb-0">
+        <h2 class="mb-0 competenceIcon" *ngFor="let skill of skills" tooltip="{{ skill.title }}" placement="bottom">
+          <i class="{{ skill.icon }}"></i>
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>

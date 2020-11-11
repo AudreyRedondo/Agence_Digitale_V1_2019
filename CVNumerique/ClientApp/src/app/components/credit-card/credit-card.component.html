@@ -1,0 +1,28 @@
+<div id="payment" class="form-group" [formGroup]="formGroup">
+  <div id="price" class="controls">
+    <span>{{ price | currency :'EUR':'symbol':'1.2-2' }}</span>
+  </div>
+  <div id="creditCard">
+    <div class="credit-card">
+      <span class="brand"><i class="fa fa-credit-card" id="brand-icon"></i></span>
+      <div id="card-number" class="field empty"></div>
+    </div>
+    <div id="card-expiry" class="field empty third-width"></div>
+    <div id="card-cvc" class="field empty third-width"></div>
+    <input id="postal-code" name="postal_code" class="field" placeholder="Code postal" formControlName="zipCode" required />
+    <em *ngIf="formGroup.controls['zipCode'].hasError('required')
+        || formGroup.controls['zipCode'].hasError('minlength')
+        || formGroup.controls['zipCode'].hasError('maxlength')"
+        class="text-danger">*</em>
+  </div>
+    <input type="hidden" id="intentId" formControlName="intentId" />
+</div>
+<div class="errors">
+  <div id="card-errors" class="text-danger errors" role="alert"></div>
+    <span *ngIf="formGroup.controls['zipCode'].hasError('minlength')" class="text-danger text-error">
+      Le code postal doit avoir 5 chiffres.
+    </span>
+    <span *ngIf="formGroup.controls['zipCode'].hasError('maxlength')" class="text-danger text-error">
+      Le code postal doit avoir 5 chiffres.
+    </span>
+</div>

@@ -1,0 +1,31 @@
+<div class="mt-3">
+  <div class="col-md-12">
+    <div class="timeline-main">
+      <ul class="stepper stepper-vertical timeline timeline-animated">
+        <li class="timeline-li hide-on-init" [ngClass]="{'timeline-inverted' : experience.id%2 === 0}" *ngFor="let experience of experiences">
+          <div class="xp-icon hide-on-init">
+            <span class="circle z-depth-1-half"><i class="fa fa-suitcase" aria-hidden="true"></i></span>
+          </div>
+          <div class="step-content z-depth-1 ml-xl-0 p-3 bg-dark hide-on-init">
+            <div class="title mb-2">
+              <h4 class="font-weight-bold first-subtitle">{{experience.job}}</h4><h4 class="second-subtitle">{{experience.company | uppercase}}</h4>
+            </div>
+            <div class="details">
+              <span class="text-muted"><i class="fa fa-map-marker"></i>&ensp;{{experience.city}}</span>
+              <span class="text-muted" *ngIf="experience.end !== null"><i class="fa fa-clock-o "></i>&ensp;{{experience.startDate | date:'MMMM yyyy' }} &ndash; {{experience.endDate | date:'MMMM yyyy' }} ({{ dateDiff(experience.startDate, experience.endDate) }} mois)</span>
+              <span class="text-muted" *ngIf="experience.end === null && experience.company !== 'Yoopala'"><i class="fa fa-clock-o"></i>&ensp;{{experience.start | date:'MMMM yyyy' }} (1 mois)</span>
+              <span class="text-muted"><i class="fa fa-info-circle"></i>&ensp;{{ experience.sector }}</span>
+              <span class="text-muted" *ngIf="experience.context != ''"><i class="fa fa-users"></i>&ensp;{{ experience.context }}</span>
+            </div>
+            <div class="mt-4" [innerHTML]="experience.details"></div>
+            <div class="competencesIcons mb-0">
+              <h2 class="mb-0 competenceIcon" *ngFor="let skill of experience.skills" tooltip="{{ skill.title }}" [attr.aria-describedby]="skill.id" placement="bottom">
+                <i class="{{ skill.icon }}"></i>
+              </h2>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

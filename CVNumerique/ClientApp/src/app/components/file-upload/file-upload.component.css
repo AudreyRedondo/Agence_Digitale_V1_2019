@@ -1,0 +1,23 @@
+div {
+  display: flex;
+  align-items: center;
+  border: #4e1c35 2px dashed;
+  padding: 20px;
+  font-size: .8rem;
+}
+
+span {
+  width: 50%;
+  overflow-wrap: break-word;
+}
+span.btn {
+  white-space: pre-line;
+  color: #a19ea0;
+  border: #a19ea0 solid 1px;
+  margin-right: 30px;
+  font-size: .8rem;
+}
+
+input {
+  display: none;
+}

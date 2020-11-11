@@ -1,0 +1,268 @@
+.modal-close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 20px;
+  color: #fff;
+  opacity: 1;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column-reverse;
+  font-size: .9rem;
+  padding: 0;
+}
+
+.form {
+  position: relative;
+  right: 12px;
+}
+
+.form-group {
+  margin-bottom: 2rem;
+}
+.form-control {
+  box-shadow: none;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  border: 0;
+  height: calc(1.8rem + 2px);
+}
+
+.form-check-label {
+  padding-right: 0;
+  padding-left: 5px;
+  font-size: .9em;
+  color: #7b6976;
+}
+.control-note {
+  align-items: center;
+}
+
+.form-note-label {
+  width: 140px;
+  color: #6c757d;
+}
+
+textarea.form-control {
+  height: 150px !important;
+}
+
+.margin-form-control {
+  margin-right: -25px;
+}
+
+.text-small {
+  font-size: 0.9rem;
+}
+.controls-inline {
+  position: relative;
+  width: 100%;
+  margin-left: 15px;
+}
+
+.controls {
+  position: relative;
+  width: 98%;
+  margin-left: 15px;
+}
+
+em {
+  right: -10px;
+  position: absolute;
+}
+
+.success {
+  position: absolute;
+  bottom: 17%;
+  left: 2%;
+  color: #514155;
+  width: 100%;
+  text-align: center;
+  top: 7%;
+}
+
+.error {
+  position: absolute;
+  bottom: -1%;
+  left: 1rem;
+  color: red;
+  width: 153%;
+}
+
+img {
+  display: none;
+}
+
+.success img {
+  display: block;
+  width: 60%;
+  margin: 1rem auto;
+}
+
+.success span {
+  margin-left: -35px;
+}
+
+.form-submit {
+  visibility: hidden;
+}
+
+.infos-form-submit {
+  position: absolute;
+  width: 50%;
+  left: 25%;
+}
+
+.text-error {
+  font-size: .6rem;
+  position: relative;
+  bottom: 12px;
+}
+
+input#note {
+  -webkit-appearance: none;
+  padding: 0;
+  font: inherit;
+  outline: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  background: #d6ccd1;
+  border-radius: 32px;
+  height: 12px;
+  box-shadow: none;
+  margin-bottom: 6px;
+  margin-left: 5px;
+  padding-left: 20px;
+  position: relative;
+  transition: opacity .2s;
+}
+
+input[type=range].custom-slider::-webkit-slider-runnable-track {
+  height: 100%;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+input[type=range].custom-slider::-webkit-slider-thumb {
+  -webkit-appearance: none; 
+  width: 1em;
+  height: inherit; 
+  border: none;
+  border-radius: 0; 
+  background: currentColor;
+  margin-left: -9px;
+  top: -3px;
+  background-color: #6f3351;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 18px;
+  position: relative;
+  width: 18px;
+  z-index: 2;
+  transition: background .25s;
+}
+
+input[type=range].custom-slider::-moz-range-track {
+  height: 100%;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+input[type=range].custom-slider::-moz-range-thumb {
+  -webkit-appearance: none;
+  width: 1em;
+  height: inherit; 
+  border: none;
+  border-radius: 0; 
+  background: currentColor;
+  margin-left: -9px;
+  top: -3px;
+  background-color: #6f3351;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 18px;
+  position: relative;
+  width: 18px;
+  z-index: 2;
+  transition: background .25s;
+}
+
+input[type=range].custom-slider::-moz-range-progress {
+  height: 0;
+  background: transparent; 
+}
+
+input[type=range].custom-slider::-ms-track {
+  height: 100%;
+  border: none;
+  border-radius: 0;
+  color: transparent; 
+  background-color: transparent;
+}
+
+input[type=range].custom-slider::-ms-thumb {
+  -webkit-appearance: none; 
+  width: 1em;
+  height: inherit; 
+  border: none;
+  border-radius: 0; 
+  background: currentColor;
+  margin-left: -9px;
+  top: -3px;
+  background-color: #6f3351;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 18px;
+  position: relative;
+  width: 18px;
+  z-index: 2;
+  transition: background .25s;
+}
+
+input[type=range].custom-slider::-ms-tooltip {
+  display: none; 
+}
+
+input[type=range].custom-slider::-ms-fill-lower {
+  background: transparent;
+}
+
+input[type=range].custom-slider::-ms-fill-upper {
+  background: transparent;
+}
+
+#selectTypeConnaissance {
+  font-size: .8rem;
+  letter-spacing: normal;
+}
+
+#selectTypeConnaissance em {
+  position: relative;
+  float: right;
+  bottom: 56px;
+  right: -13px;
+}
+
+@media (min-width: 992px) {
+  .modal-body {
+    flex-direction: row-reverse;
+  }
+}
+
+@media (min-width: 768px) {
+  .modal-body {
+    padding: 1rem;
+  }
+
+  #temoiognage-modal-content {
+    padding: 40px 30px 0;
+  }
+
+  .header {
+    padding-left: 15px;
+  }
+}

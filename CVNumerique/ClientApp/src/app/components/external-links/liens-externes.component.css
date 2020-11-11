@@ -1,0 +1,11 @@
+li i {
+  font-size: 1.8rem;
+  padding-left: 20px;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: -55px;
+}
